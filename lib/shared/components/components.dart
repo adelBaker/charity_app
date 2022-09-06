@@ -29,7 +29,7 @@ Widget defaultButton ({
 Widget itemBuilder({
   required String text,
   required String path,
-  required Function()? onTap,
+  required dynamic Function()? onTap,
 
 })=> Expanded(
 
@@ -51,7 +51,7 @@ Widget itemBuilder({
              textAlign: TextAlign.center,
              style: const TextStyle(
                fontSize: 16,
-
+              
              ),),
           ],
         ),

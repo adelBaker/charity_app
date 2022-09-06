@@ -1,8 +1,14 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
+import 'bloc_observer.dart';
 import 'layout/home_layout.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  Bloc.observer = MyBlocObserver();
+
   runApp(MyApp());
 }
 
