@@ -26,10 +26,14 @@ Widget defaultButton ({
   ),
 );
 
+
+
 Widget itemBuilder({
   required String text,
   required String path,
   required dynamic Function()? onTap,
+  Color? color,
+  Color? text_color,
 
 })=> Expanded(
 
@@ -40,7 +44,7 @@ Widget itemBuilder({
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10,),
-          color: Colors.grey[200],
+          color: color,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -49,9 +53,9 @@ Widget itemBuilder({
             ),
              Text(text,
              textAlign: TextAlign.center,
-             style: const TextStyle(
+             style: TextStyle(
                fontSize: 16,
-              
+               color: text_color,
              ),),
           ],
         ),

@@ -44,15 +44,20 @@ class HomeLayout extends StatelessWidget {
                           children: [
 
                             itemBuilder(
+                              text_color:cubit.currentIndex==1?Colors.white :Colors.black ,
+                              color: cubit.currentIndex==1?Colors.grey:Colors.grey[200],
                                 text: "اضافة مستفيد",
                                 path: "assets/images/add.png",
                                 onTap: () {
                                   print("اضافة مستفيد");
                                   cubit.changeSideBar(1);
+
                                 }
                             ),
 
                             itemBuilder(
+                                text_color:cubit.currentIndex==2?Colors.white :Colors.black ,
+                                color: cubit.currentIndex==2?Colors.grey:Colors.grey[200],
                                 text: "اضافة طلب مستفيد",
                                 path: "assets/images/plus.png",
                                 onTap: (){
@@ -62,6 +67,10 @@ class HomeLayout extends StatelessWidget {
                             ),
 
                             itemBuilder(
+                                text_color:cubit.currentIndex==3?Colors.white :Colors.black ,
+
+                                color: cubit.currentIndex==3?Colors.grey:Colors.grey[200],
+
                                 text: "تلبية طلب مستفيد",
                                 path: "assets/images/fulfill a request.png",
                                 onTap: (){
@@ -79,6 +88,10 @@ class HomeLayout extends StatelessWidget {
                           children: [
 
                             itemBuilder(
+                                text_color:cubit.currentIndex==4?Colors.white :Colors.black ,
+
+                                color: cubit.currentIndex==4?Colors.grey:Colors.grey[200],
+
                                 text: "اعلان عن حاجة",
                                 path: "assets/images/ad of a need.png",
                                 onTap: (){
@@ -87,7 +100,11 @@ class HomeLayout extends StatelessWidget {
 
                                 }),
 
-                            itemBuilder(text: "اعلان عن فائض",
+                            itemBuilder(
+                                text_color:cubit.currentIndex==5?Colors.white :Colors.black ,
+
+                                color: cubit.currentIndex==5?Colors.grey:Colors.grey[200],
+                                text: "اعلان عن فائض",
                                 path: "assets/images/ad of surplus.png",
                                 onTap: (){
                               print("اعلان عن فائض");
@@ -105,6 +122,9 @@ class HomeLayout extends StatelessWidget {
                           children: [
 
                             itemBuilder(
+                                text_color:cubit.currentIndex==6?Colors.white :Colors.black ,
+
+                                color: cubit.currentIndex==6?Colors.grey:Colors.grey[200],
                                 text: "تعديل بيانات مستفيد",
                                 path: "assets/images/edit beneficiary information.png",
                                 onTap: (){
@@ -113,7 +133,10 @@ class HomeLayout extends StatelessWidget {
                                 }
                             ),
 
-                            itemBuilder(text: "تعديل بيانات الجمعية",
+                            itemBuilder(
+                                text_color:cubit.currentIndex==7?Colors.white :Colors.black ,
+                                color: cubit.currentIndex==7?Colors.grey:Colors.grey[200],
+                                text: "تعديل بيانات الجمعية",
                                 path: "assets/images/editing the information of a charitable organization.png",
                                 onTap: (){
                               print("تعديل بيانات جمعية");
