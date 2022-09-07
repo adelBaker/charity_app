@@ -34,7 +34,7 @@ Widget itemBuilder({
 })=> Expanded(
 
   child: Padding(
-    padding: const EdgeInsets.all(10.0),
+    padding: const EdgeInsets.all(5.0),
     child: InkWell(
       onTap: onTap,
       child: Container(

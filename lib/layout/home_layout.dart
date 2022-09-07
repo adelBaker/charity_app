@@ -6,7 +6,6 @@ import 'cubit/cubit.dart';
 import 'cubit/states.dart';
 
 class HomeLayout extends StatelessWidget {
-  const HomeLayout({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -17,18 +16,17 @@ class HomeLayout extends StatelessWidget {
         builder: (context,state){
           AppCubit cubit=AppCubit.get(context);
 
-          int index=0;
-
           return Scaffold(
             appBar: AppBar(
 
               backgroundColor: Colors.white,
 
-              title: const Text("الواجهة الرئيسية",style: TextStyle(color: Colors.black),),
+              title:  Text("${cubit.screens[cubit.currentIndex]}",style: const TextStyle(color: Colors.black),),
               actions: [
-                IconButton(
-                  color: Colors.black,
-                  onPressed: (){}, icon:const Icon(Icons.add_alert_sharp),)
+                TextButton(onPressed: (){
+                  cubit.changeSideBar(0);
+
+                }, child: const Text("Main screen"))
               ],
             ),
             body: Row(
@@ -45,13 +43,32 @@ class HomeLayout extends StatelessWidget {
                         child: Row(
                           children: [
 
-                            itemBuilder(text: "اضافة مستفيد", path: "assets/images/add.png",onTap: (){print("اضافة مستفيد");
-                              cubit.currentIndex=3;
-                            }),
+                            itemBuilder(
+                                text: "اضافة مستفيد",
+                                path: "assets/images/add.png",
+                                onTap: () {
+                                  print("اضافة مستفيد");
+                                  cubit.changeSideBar(1);
+                                }
+                            ),
 
-                            itemBuilder(text: "اضافة طلب مستفيد", path: "assets/images/plus.png",onTap: (){print("اضافة طلب مستفيد");}),
+                            itemBuilder(
+                                text: "اضافة طلب مستفيد",
+                                path: "assets/images/plus.png",
+                                onTap: (){
+                                print("اضافة طلب مستفيد");
+                                cubit.changeSideBar(2);
+                            }
+                            ),
 
-                            itemBuilder(text: "تلبية طلب مستفيد", path: "assets/images/fulfill a request.png",onTap: (){print("تلبية طلب مستفيد");}),
+                            itemBuilder(
+                                text: "تلبية طلب مستفيد",
+                                path: "assets/images/fulfill a request.png",
+                                onTap: (){
+                                  print("تلبية طلب مستفيد");
+                                  cubit.changeSideBar(3);
+                                }
+                                ),
 
                           ],
                         ),
@@ -61,19 +78,27 @@ class HomeLayout extends StatelessWidget {
                         child: Row(
                           children: [
 
-                            itemBuilder(text: "اعلان عن حاجة", path: "assets/images/ad of a need.png",onTap: (){print("اعلان عن حاجة");}),
+                            itemBuilder(
+                                text: "اعلان عن حاجة",
+                                path: "assets/images/ad of a need.png",
+                                onTap: (){
+                                  print("اعلان عن حاجة");
+                                  cubit.changeSideBar(4);
 
-                            itemBuilder(text: "اعلان عن فائض", path: "assets/images/ad of surplus.png",onTap: (){print("اعلان عن فائض");}),
+                                }),
+
+                            itemBuilder(text: "اعلان عن فائض",
+                                path: "assets/images/ad of surplus.png",
+                                onTap: (){
+                              print("اعلان عن فائض");
+                              cubit.changeSideBar(5);
+                            }
+                            ),
 
 
                           ],
                         ),
                       ),
-
-
-
-
-
 
                       Expanded(
                         child: Row(
@@ -81,16 +106,24 @@ class HomeLayout extends StatelessWidget {
 
                             itemBuilder(
                                 text: "تعديل بيانات مستفيد",
-                                path: "assets/images/edit beneficiary information.png",onTap: (){print("تعديل بيانات مستفيد");}
+                                path: "assets/images/edit beneficiary information.png",
+                                onTap: (){
+                                  print("تعديل بيانات مستفيد");
+                                  cubit.changeSideBar(6);
+                                }
                             ),
 
-                            itemBuilder(text: "تعديل بيانات الجمعية", path: "assets/images/editing the information of a charitable organization.png",onTap: (){print("تعديل بيانات جمعية");}),
+                            itemBuilder(text: "تعديل بيانات الجمعية",
+                                path: "assets/images/editing the information of a charitable organization.png",
+                                onTap: (){
+                              print("تعديل بيانات جمعية");
+                              cubit.changeSideBar(7);
+                            }
+                            ),
 
                           ],
                         ),
                       ),
-
-
 
                       Expanded(
                         child: Container(
@@ -113,9 +146,6 @@ class HomeLayout extends StatelessWidget {
 
                       ),
 
-
-
-
                     ],
                   ),
                 ),
@@ -131,6 +161,5 @@ class HomeLayout extends StatelessWidget {
       ),
     );
   }
-
 }
 
